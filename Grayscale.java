@@ -9,7 +9,7 @@ public class Grayscale {
 		BufferedImage image = null;
 		File file = null;
 		try {
-			file = new File("ntou.jpg");
+			file = new File("WebContent/WEB-INF/img/ntou.jpg");
 			image = ImageIO.read(file);
 		} catch (IOException e) {
 			System.out.println(e);
@@ -29,7 +29,7 @@ public class Grayscale {
 			}
 		}
 		try {
-			file = new File("C:\\Users\\USER\\Desktop\\teach\\java\\grayscale.png");
+			file = new File("WebContent/WEB-INF/img/output/Grayscale.jpg");
 			ImageIO.write(image, "png", file);
 			System.out.println("Successfully converted a colored image into a grayscale image");
 		} catch (IOException e) {

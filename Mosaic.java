@@ -81,7 +81,7 @@ public class Mosaic { // 圖片打馬賽克
 	}
 
 	public static void main(String[] args) throws Exception {
-		Mosaic mosaic = new Mosaic("ntou.jpg", "mosaic", "jpg");
+		Mosaic mosaic = new Mosaic("WebContent/WEB-INF/img/ntou.jpg", "WebContent/WEB-INF/img/output/Mosaic", "jpg");
 		mosaic.pixelate(17); // 數值越大越模糊
 	}
 

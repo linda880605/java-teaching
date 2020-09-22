@@ -31,10 +31,10 @@ public class Overlay { // 疊圖
 	}
 
 	public static void main(String[] args) throws IOException {
-		String onePic = "ntou.jpg";
-		String twoPic = "ntoulogo.png";
-		String saveName = "overlay";
-		String type = "jpg";
+		String onePic = "WebContent/WEB-INF/img/ntou.jpg";
+		String twoPic = "WebContent/WEB-INF/img/ntou-logo.png";
+		String saveName = "WebContent/WEB-INF/img/output/Overlay";
+		String type = "png";
 		Overlay overlay = new Overlay();
 		BufferedImage image = overlay.add(onePic, twoPic, 0, 0, 1.0f);
 		overlay.generatePic(image, saveName, type);

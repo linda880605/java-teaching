@@ -14,7 +14,7 @@ public class ReadWriteImage {
 		try {
 			// URL url = new URL("https://a.ksd-i.com/a/2020-03-02/124715-819810.jpg");
 			//File file = new File("C:\\Users\\USER\\Desktop\\teach\\java\\boy75.png");
-			File file = new File("boy75.png");
+			File file = new File("WebContent/WEB-INF/img/ntou.jpg");
 			image = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
 			image = ImageIO.read(file); // Reading input file
 			System.out.println("Reading complete.");
@@ -23,7 +23,7 @@ public class ReadWriteImage {
 		}
 		// WRITE IMAGE
 		try {
-			File outputFile = new File("outputImage.png");
+			File outputFile = new File("WebContent/WEB-INF/img/output/write.jpg");
 			ImageIO.write(image, "png", outputFile);
 			System.out.println("Writing complete.");
 		} catch (IOException e) {

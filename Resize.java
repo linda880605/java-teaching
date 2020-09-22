@@ -9,7 +9,7 @@ import javax.imageio.ImageIO;
 public class Resize { // 調整圖片大小 長寬
 	public static void main(String[] args) throws IOException {
 
-		File imgFile = new File("ntou.jpg");
+		File imgFile = new File("WebContent/WEB-INF/img/ntou.jpg");
 		BufferedImage image = ImageIO.read(imgFile);
 
 		int width = image.getWidth() / 2;
@@ -21,7 +21,9 @@ public class Resize { // 調整圖片大小 長寬
 		g2d.drawImage(image, 0, 0, width, height, null); // 把讀入的圖片畫上去
 		g2d.dispose(); // 釋放物件
 
-		File outputFile = new File("resize.jpg");
+		File outputFile = new File("WebContent/WEB-INF/img/output/Resize.jpg");
 		ImageIO.write(emptyImage, "jpg", outputFile);
+		System.out.println("Successfully resize image");
+		
 	}
 }

@@ -12,10 +12,10 @@ public class Brightness { // 調整圖像亮度
 	public static void main(String[] args) {
 		try {
 			System.loadLibrary(Core.NATIVE_LIBRARY_NAME); // 調用openCV的method需引入
-			Mat source = Imgcodecs.imread("123.jpg"); // 將圖像讀取為Mat物件
+			Mat source = Imgcodecs.imread("WebContent/WEB-INF/img/ntou.jpg"); // 將圖像讀取為Mat物件
 			Mat destination = new Mat(source.rows(), source.cols(), source.type());
 			source.convertTo(destination, -1, alpha, beta);
-			Imgcodecs.imwrite("brightness.jpg", destination); // 將Mat物件寫入圖像
+			Imgcodecs.imwrite("WebContent/WEB-INF/img/output/Brightness.jpg", destination); // 將Mat物件寫入圖像
 			System.out.println("Successfully created a Brightness image");
 		} catch (Exception e) {
 			System.out.println("error: " + e.getMessage());

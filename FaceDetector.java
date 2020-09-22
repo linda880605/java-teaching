@@ -14,8 +14,8 @@ public class FaceDetector {
 	public static void main(String[] args) {
 		System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
 		CascadeClassifier faceDetector = new CascadeClassifier(
-				"C:\\Users\\USER\\Downloads\\opencv\\sources\\data\\haarcascades_cuda\\haarcascade_frontalface_alt.xml");
-		Mat image = Imgcodecs.imread("123.jpg");
+				"WebContent/opencv/sources/data/haarcascades_cuda/haarcascade_frontalface_alt.xml");
+		Mat image = Imgcodecs.imread("WebContent/WEB-INF/img/Face-Detect.jpg");
 
 		MatOfRect faceDetections = new MatOfRect();
 		faceDetector.detectMultiScale(image, faceDetections); // 偵測人臉
@@ -23,7 +23,7 @@ public class FaceDetector {
 			Imgproc.rectangle(image, new Point(rect.x, rect.y), new Point(rect.x + rect.width, rect.y + rect.height),
 					new Scalar(0, 255, 0), 2); // 畫出框線
 		}
-		Imgcodecs.imwrite("FaceDetector.jpg", image);
+		Imgcodecs.imwrite("WebContent/WEB-INF/img/output/FaceDetector.jpg", image);
 		System.out.println("Successfully created a FaceDetector image");
 	}
 }

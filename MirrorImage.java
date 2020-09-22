@@ -9,7 +9,7 @@ public class MirrorImage {
 		BufferedImage img1 = null;
 		File file = null;
 		try {
-			file = new File("123.jpg");
+			file = new File("WebContent/WEB-INF/img/ntou.jpg");
 			img1 = ImageIO.read(file);
 		} catch (IOException e) {
 			System.out.println("Error: " + e);
@@ -25,7 +25,7 @@ public class MirrorImage {
 		}
 		// save mirror image
 		try {
-			file = new File("mirror.png");
+			file = new File("WebContent/WEB-INF/img/output/mirror.jpg");
 			ImageIO.write(img2, "png", file);
 			System.out.println("Successfully created a mirror image");
 		} catch (IOException e) {

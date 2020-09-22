@@ -54,8 +54,8 @@ public class ColorHair { // 疊圖
 	public static void main(String[] args) throws IOException {
 		String color = "#46A3FF";
 		String colorPic = getColorPicture(color);
-		String hairPic = "hair.png";
-		String saveName = "colorHair";
+		String hairPic = "WebContent/WEB-INF/img/hair.png";
+		String saveName = "WebContent/WEB-INF/img/output/colorHair";
 		String type = "png";
 		ColorHair colorHair = new ColorHair();
 		BufferedImage image = colorHair.add(hairPic, colorPic, 0, 0, 0.5f); // 0.5f為透明度50%

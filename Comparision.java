@@ -11,8 +11,8 @@ public class Comparision {
 		BufferedImage imgA = null;
 		BufferedImage imgB = null;
 		try {
-			File fileA = new File("123.jpg");
-			File fileB = new File("1234.jpg");
+			File fileA = new File("WebContent/WEB-INF/img/ntou.jpg");
+			File fileB = new File("WebContent/WEB-INF/img/ntou2.jpg");
 			imgA = ImageIO.read(fileA);
 			imgB = ImageIO.read(fileB);
 		} catch (IOException e) {

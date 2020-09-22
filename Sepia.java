@@ -9,7 +9,7 @@ public class Sepia {
 		BufferedImage image = null;
 		File file = null;
 		try {
-			file = new File("ntou.jpg");
+			file = new File("WebContent/WEB-INF/img/ntou.jpg");
 			image = ImageIO.read(file);
 		} catch (IOException e) {
 			System.out.println(e);
@@ -43,7 +43,7 @@ public class Sepia {
 			}
 		}
 		try {
-			file = new File("C:\\Users\\USER\\Desktop\\teach\\java\\sepia.png");
+			file = new File("WebContent/WEB-INF/img/output/Sepia.png");
 			ImageIO.write(image, "png", file);
 			System.out.println("Successfully converted a colored image into a sepia image");
 		} catch (IOException e) {
