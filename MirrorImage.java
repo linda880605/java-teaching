@@ -4,7 +4,7 @@ import java.io.*;
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 
-public class MirrorImage {
+public class MirrorImage { // 鏡像反射
 	public static void main(String args[]) throws IOException {
 		BufferedImage img1 = null;
 		File file = null;
@@ -23,9 +23,8 @@ public class MirrorImage {
 				img2.setRGB(rx, y, p);
 			}
 		}
-		// save mirror image
 		try {
-			file = new File("WebContent/WEB-INF/img/output/mirror.jpg");
+			file = new File("WebContent/WEB-INF/img/output/Mirror.jpg");
 			ImageIO.write(img2, "png", file);
 			System.out.println("Successfully created a mirror image");
 		} catch (IOException e) {

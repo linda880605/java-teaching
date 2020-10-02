@@ -40,7 +40,7 @@ public class ColorHair { // 疊圖
 		int width = twoImage.getWidth();
 		int height = twoImage.getHeight();
 		g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_ATOP, alpha));
-		g2d.drawImage(twoImage, x, y, width, width, null);
+		g2d.drawImage(twoImage, x, y, width, height, null);
 		g2d.dispose();
 		return oneImage;
 	}

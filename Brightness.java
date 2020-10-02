@@ -4,18 +4,18 @@ import org.opencv.core.Core;
 import org.opencv.core.Mat;
 import org.opencv.imgcodecs.Imgcodecs;
 
-public class Brightness { // ½Õ¾ã¹Ï¹³«G«×
-	static double alpha = 1; // ¹ï¤ñ«× ¤ñ¨Ò
-	static double beta = 50; // «G«×
-	// ½u©ÊÅÜ´« ¹Ï¹³ªº¨C­Ó¹³¯À»PAlpha­È¬Û­¼ ¦A¥[¤Wbeta­È¨Ó¼W±j¹Ï¹³ªº«G«×
+public class Brightness { // èª¿æ•´åœ–åƒäº®åº¦
+	static double alpha = 1; // å°æ¯”åº¦ æ¯”ä¾‹
+	static double beta = 50; // äº®åº¦
+	// ç·šæ€§è®Šæ› åœ–åƒçš„æ¯å€‹åƒç´ èˆ‡Alphaå€¼ç›¸ä¹˜ å†åŠ ä¸Šbetaå€¼ä¾†å¢å¼·åœ–åƒçš„äº®åº¦
 
 	public static void main(String[] args) {
 		try {
-			System.loadLibrary(Core.NATIVE_LIBRARY_NAME); // ½Õ¥ÎopenCVªºmethod»İ¤Ş¤J
-			Mat source = Imgcodecs.imread("WebContent/WEB-INF/img/ntou.jpg"); // ±N¹Ï¹³Åª¨ú¬°Matª«¥ó
+			System.loadLibrary(Core.NATIVE_LIBRARY_NAME); // èª¿ç”¨OpenCVçš„methodéœ€å¼•å…¥
+			Mat source = Imgcodecs.imread("WebContent/WEB-INF/img/ntou.jpg"); // å°‡åœ–åƒè®€å–ç‚ºMatç‰©ä»¶
 			Mat destination = new Mat(source.rows(), source.cols(), source.type());
 			source.convertTo(destination, -1, alpha, beta);
-			Imgcodecs.imwrite("WebContent/WEB-INF/img/output/Brightness.jpg", destination); // ±NMatª«¥ó¼g¤J¹Ï¹³
+			Imgcodecs.imwrite("WebContent/WEB-INF/img/output/Brightness.jpg", destination); // å°‡Matç‰©ä»¶å¯«å…¥åœ–åƒ
 			System.out.println("Successfully created a Brightness image");
 		} catch (Exception e) {
 			System.out.println("error: " + e.getMessage());

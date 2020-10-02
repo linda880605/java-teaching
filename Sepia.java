@@ -4,7 +4,7 @@ import java.io.*;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 
-public class Sepia {
+public class Sepia { // Ê£ïË§êËâ≤ÂúñÂÉè
 	public static void main(String args[]) throws IOException {
 		BufferedImage image = null;
 		File file = null;
@@ -18,7 +18,7 @@ public class Sepia {
 		int height = image.getHeight();
 		for (int x = 0; x < width; x++) {
 			for (int y = 0; y < height; y++) {
-				int p = image.getRGB(x, y); // ¿Ú®˙πœπ≥™∫pixel
+				int p = image.getRGB(x, y); // Áç≤ÂèñÂúñÂÉèÁöÑpixel
 				int a = (p >> 24) & 0xff;
 				int R = (p >> 16) & 0xff;
 				int G = (p >> 8) & 0xff;
@@ -43,8 +43,8 @@ public class Sepia {
 			}
 		}
 		try {
-			file = new File("WebContent/WEB-INF/img/output/Sepia.png");
-			ImageIO.write(image, "png", file);
+			file = new File("WebContent/WEB-INF/img/output/Sepia.jpg");
+			ImageIO.write(image, "jpg", file);
 			System.out.println("Successfully converted a colored image into a sepia image");
 		} catch (IOException e) {
 			System.out.println(e);

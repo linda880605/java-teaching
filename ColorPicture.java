@@ -1,4 +1,5 @@
 package ntou;
+
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
@@ -13,10 +14,10 @@ public class ColorPicture { // 生成顏色圖片
 		int height = 100;
 		BufferedImage img = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
 		Graphics g = img.getGraphics();
-		g.setColor(new Color(0, 180, 140));
+		g.setColor(new Color(70, 165, 211));
 
 		g.fillRect(0, 0, img.getWidth(), img.getHeight());
-		File file = new File("color.jpg");
+		File file = new File("WebContent/WEB-INF/img/output/color.jpg");
 		try {
 			ImageIO.write(img, "jpg", file);
 		} catch (IOException e) {

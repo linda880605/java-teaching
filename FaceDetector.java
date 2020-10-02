@@ -10,18 +10,18 @@ import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
 import org.opencv.objdetect.CascadeClassifier;
 
-public class FaceDetector {
+public class FaceDetector { // äººè‡‰æª¢æ¸¬
 	public static void main(String[] args) {
 		System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
 		CascadeClassifier faceDetector = new CascadeClassifier(
 				"WebContent/opencv/sources/data/haarcascades_cuda/haarcascade_frontalface_alt.xml");
-		Mat image = Imgcodecs.imread("WebContent/WEB-INF/img/Face-Detect.jpg");
+		Mat image = Imgcodecs.imread("WebContent/WEB-INF/img/person.jpg");
 
 		MatOfRect faceDetections = new MatOfRect();
-		faceDetector.detectMultiScale(image, faceDetections); // °»´ú¤HÁy
-		for (Rect rect : faceDetections.toArray()) { // faceDetections.toArray()ªğ¦^¥i¥H­¡¥NªºRectª«¥ó°}¦C
+		faceDetector.detectMultiScale(image, faceDetections); // åµæ¸¬äººè‡‰
+		for (Rect rect : faceDetections.toArray()) { // faceDetections.toArray()è¿”å›å¯ä»¥è¿­ä»£çš„Rectç‰©ä»¶é™£åˆ—
 			Imgproc.rectangle(image, new Point(rect.x, rect.y), new Point(rect.x + rect.width, rect.y + rect.height),
-					new Scalar(0, 255, 0), 2); // µe¥X®Ø½u
+					new Scalar(0, 255, 0), 2); // ç•«å‡ºæ¡†ç·š
 		}
 		Imgcodecs.imwrite("WebContent/WEB-INF/img/output/FaceDetector.jpg", image);
 		System.out.println("Successfully created a FaceDetector image");

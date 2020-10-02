@@ -20,6 +20,8 @@ public class Overlay { // 疊圖
 		// int height = twoImage.getHeight();
 		g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_ATOP, alpha));
 		g2d.drawImage(twoImage, x, y, 200, 200, null);
+		// 人臉+頭髮 g2d.drawImage(twoImage, x, y, 300, 300, null);
+		
 		g2d.dispose();
 		return oneImage;
 	}
@@ -33,10 +35,13 @@ public class Overlay { // 疊圖
 	public static void main(String[] args) throws IOException {
 		String onePic = "WebContent/WEB-INF/img/ntou.jpg";
 		String twoPic = "WebContent/WEB-INF/img/ntou-logo.png";
+		//人臉+頭髮  String onePic = "WebContent/WEB-INF/img/face.jpg";
+		//人臉+頭髮 String twoPic = "WebContent/WEB-INF/img/colorHair.png";
 		String saveName = "WebContent/WEB-INF/img/output/Overlay";
 		String type = "png";
 		Overlay overlay = new Overlay();
 		BufferedImage image = overlay.add(onePic, twoPic, 0, 0, 1.0f);
+		// 人臉+頭髮 BufferedImage image = overlay.add(onePic, twoPic, 160, -10, 1.0f);
 		overlay.generatePic(image, saveName, type);
 	}
 }

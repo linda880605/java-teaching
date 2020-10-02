@@ -6,7 +6,7 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-public class Resize { // ½Õ¾ã¹Ï¤ù¤j¤p ªø¼e
+public class Resize { // èª¿æ•´åœ–ç‰‡å¤§å° é•·å¯¬
 	public static void main(String[] args) throws IOException {
 
 		File imgFile = new File("WebContent/WEB-INF/img/ntou.jpg");
@@ -15,11 +15,11 @@ public class Resize { // ½Õ¾ã¹Ï¤ù¤j¤p ªø¼e
 		int width = image.getWidth() / 2;
 		int height = image.getHeight() / 2;
 		BufferedImage emptyImage = new BufferedImage(width, height, image.getType());
-		// «Ø¥ßªÅ¥Õªº BufferedImageª«¥ó ©w¸q ¼e«×¡B°ª«×¡B¿é¥XÃş«¬
+		// å»ºç«‹ç©ºç™½çš„ BufferedImageç‰©ä»¶ å®šç¾© å¯¬åº¦ã€é«˜åº¦ã€è¼¸å‡ºé¡å‹
 
 		Graphics2D g2d = emptyImage.createGraphics();
-		g2d.drawImage(image, 0, 0, width, height, null); // §âÅª¤Jªº¹Ï¤ùµe¤W¥h
-		g2d.dispose(); // ÄÀ©ñª«¥ó
+		g2d.drawImage(image, 0, 0, width, height, null); // æŠŠè®€å…¥çš„åœ–ç‰‡ç•«ä¸Šå»
+		g2d.dispose(); // é‡‹æ”¾ç‰©ä»¶
 
 		File outputFile = new File("WebContent/WEB-INF/img/output/Resize.jpg");
 		ImageIO.write(emptyImage, "jpg", outputFile);

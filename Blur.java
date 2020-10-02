@@ -6,7 +6,7 @@ import org.opencv.core.Size;
 import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
 
-public class Blur { // ��ƹϹ�
+public class Blur { // 虛化圖像
 	public static void main(String[] args) {
 		try {
 			System.loadLibrary(Core.NATIVE_LIBRARY_NAME);

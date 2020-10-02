@@ -6,7 +6,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.DecimalFormat;
 
-public class Comparision {
+public class Comparision { // è¨ˆç®—å…©å¼µç…§ç‰‡çš„å·®ç•°åº¦
 	public static void main(String[] args) {
 		BufferedImage imgA = null;
 		BufferedImage imgB = null;
@@ -24,7 +24,7 @@ public class Comparision {
 		int height2 = imgB.getHeight();
 
 		if ((width1 != width2) || (height1 != height2))
-			System.out.println("¨â±i·Ó¤ù¤Ø¤o¤j¤p¤£²Å");
+			System.out.println("å…©å¼µç…§ç‰‡å°ºå¯¸å¤§å°ä¸ç¬¦");
 		else {
 			double difference = 0;
 			for (int y = 0; y < height1; y++) {
@@ -42,9 +42,9 @@ public class Comparision {
 					difference += Math.abs(blueA - blueB);
 				}
 			}
-			double totalPixels = width1 * height1 * 3; // ­¼3¬O ¦]¬°¦³rgb¤T­ÓÃC¦âªºpixels
+			double totalPixels = width1 * height1 * 3; // ä¹˜3æ˜¯å› ç‚ºæœ‰rgbä¸‰å€‹é¡è‰²çš„pixels
 			double avg = difference / totalPixels;
-			double percentage = (avg / 255) * 100; // ¨C­Ópixelªº­È¬°0~255
+			double percentage = (avg / 255) * 100; // æ¯å€‹pixelçš„å€¼ç‚º0~255
 			DecimalFormat df = new DecimalFormat("##.00");
 			percentage = Double.parseDouble(df.format(percentage));
 			System.out.println("Difference Percentage->" + percentage);

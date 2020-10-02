@@ -1,11 +1,12 @@
 package ntou;
+
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import javax.imageio.ImageIO;
 
-public class Mosaic { // ¹Ï¤ù¥´°¨ÁÉ§J
+public class Mosaic { // åœ–ç‰‡é¦¬è³½å…‹
 
 	String picture;
 	String saveName;
@@ -21,12 +22,12 @@ public class Mosaic { // ¹Ï¤ù¥´°¨ÁÉ§J
 		File file = new File(picture);
 		BufferedImage image = ImageIO.read(file);
 		BufferedImage outputImage = new BufferedImage(image.getWidth(), image.getHeight(), image.TYPE_INT_RGB);
-		if (image.getWidth() < size || image.getHeight() < size || size <= 0) { // °¨ÁÉ§J®æ¤Ø¤o¤Ó¤j©Î¤Ó¤p
+		if (image.getWidth() < size || image.getHeight() < size || size <= 0) { // é¦¬è³½å…‹æ ¼å°ºå¯¸å¤ªå¤§æˆ–å¤ªå°
 			return false;
 		}
 
-		int countX = 0; // x¶b¯x§Î®æ­Ó¼Æ
-		int countY = 0; // y¶b¯x§Î®æ­Ó¼Æ
+		int countX = 0; // xè»¸çŸ©å½¢æ ¼å€‹æ•¸
+		int countY = 0; // yè»¸çŸ©å½¢æ ¼å€‹æ•¸
 		if (image.getWidth() % size == 0) {
 			countX = image.getWidth() / size;
 		} else {
@@ -37,22 +38,22 @@ public class Mosaic { // ¹Ï¤ù¥´°¨ÁÉ§J
 		} else {
 			countY = image.getHeight() / size + 1;
 		}
-		int x = 0; // x¶b§¤¼Ð
-		int y = 0; // y¶b§¤¼Ð
-		// Ã¸¨î°¨ÁÉ§J(Ã¸¨î¯x§Î¨Ã¶ñ¥RÃC¦â)
+		int x = 0; // xè»¸åæ¨™
+		int y = 0; // yè»¸åæ¨™
+		// ç¹ªè£½é¦¬è³½å…‹(ç¹ªè£½çŸ©å½¢ä¸¦å¡«å……é¡è‰²)
 		Graphics gs = outputImage.getGraphics();
 		for (int i = 0; i < countX; i++) {
 			for (int j = 0; j < countY; j++) {
-				// °¨ÁÉ§J¯x§Î®æ¤j¤p
+				// é¦¬è³½å…‹çŸ©å½¢æ ¼å¤§å°
 				int mWidth = size;
 				int mHeight = size;
-				if (i == countX - 1) { // ³Ì«á¤@®æ¥i¯à¤£°÷¤@­Ósize
+				if (i == countX - 1) { // æœ€å¾Œä¸€æ ¼å¯èƒ½ä¸å¤ ä¸€å€‹size
 					mWidth = image.getWidth() - x;
 				}
-				if (j == countY - 1) { // ³Ì«á¤@®æ¥i¯à¤£°÷¤@­Ósize
+				if (j == countY - 1) { // æœ€å¾Œä¸€æ ¼å¯èƒ½ä¸å¤ ä¸€å€‹size
 					mHeight = image.getHeight() - y;
 				}
-				// ¯x§ÎÃC¦â¨ú¤¤¤ß¹³¯ÀÂIRGB­È
+				// çŸ©å½¢é¡è‰²å–ä¸­å¿ƒåƒç´ é»žRGBå€¼
 				int centerX = x;
 				int centerY = y;
 				if (mWidth % 2 == 0) {
@@ -67,11 +68,11 @@ public class Mosaic { // ¹Ï¤ù¥´°¨ÁÉ§J
 				}
 				Color color = new Color(image.getRGB(centerX, centerY));
 				gs.setColor(color);
-				gs.fillRect(x, y, mWidth, mHeight); // µe¥X¶ñº¡ÃC¦âªºªø¤è§Î
-				y = y + size;// ­pºâ¤U¤@­Ó¯x§Îªºy§¤¼Ð
+				gs.fillRect(x, y, mWidth, mHeight); // ç•«å‡ºå¡«æ»¿é¡è‰²çš„é•·æ–¹å½¢
+				y = y + size;// è¨ˆç®—ä¸‹ä¸€å€‹çŸ©å½¢çš„yåæ¨™
 			}
-			y = 0;// ÁÙ­ìy§¤¼Ð
-			x = x + size;// ­pºâx§¤¼Ð
+			y = 0; // é‚„åŽŸyåæ¨™
+			x = x + size; // è¨ˆç®—xåæ¨™
 		}
 		gs.dispose();
 		File outputFile = new File(saveName + "." + type);
@@ -82,7 +83,7 @@ public class Mosaic { // ¹Ï¤ù¥´°¨ÁÉ§J
 
 	public static void main(String[] args) throws Exception {
 		Mosaic mosaic = new Mosaic("WebContent/WEB-INF/img/ntou.jpg", "WebContent/WEB-INF/img/output/Mosaic", "jpg");
-		mosaic.pixelate(17); // ¼Æ­È¶V¤j¶V¼Ò½k
+		mosaic.pixelate(17); // æ•¸å€¼è¶Šå¤§è¶Šæ¨¡ç³Š
 	}
 
 }

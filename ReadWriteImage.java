@@ -7,24 +7,24 @@ import javax.imageio.ImageIO;
 
 public class ReadWriteImage {
 	public static void main(String args[]) throws IOException {
-		int width = 800; // width of the image
-		int height = 600; // height of the image
+		int width = 800;
+		int height = 600;
 		BufferedImage image = null;
-		// READ IMAGE
+		// 讀取圖片
 		try {
-			// URL url = new URL("https://a.ksd-i.com/a/2020-03-02/124715-819810.jpg");
-			//File file = new File("C:\\Users\\USER\\Desktop\\teach\\java\\boy75.png");
+			// URL url = new URL("https://web.cheers.com.tw/issue/2018/master/article/img/ad8.jpg");			
 			File file = new File("WebContent/WEB-INF/img/ntou.jpg");
 			image = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
-			image = ImageIO.read(file); // Reading input file
+			// image = ImageIO.read(url);
+			image = ImageIO.read(file);
 			System.out.println("Reading complete.");
 		} catch (IOException e) {
 			System.out.println("Error: " + e);
 		}
-		// WRITE IMAGE
+		// 寫入圖片
 		try {
-			File outputFile = new File("WebContent/WEB-INF/img/output/write.jpg");
-			ImageIO.write(image, "png", outputFile);
+			File outputFile = new File("WebContent/WEB-INF/img/output/ReadWriteImage.jpg");
+			ImageIO.write(image, "jpg", outputFile);
 			System.out.println("Writing complete.");
 		} catch (IOException e) {
 			System.out.println("Error: " + e);
